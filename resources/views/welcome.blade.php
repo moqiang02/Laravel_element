@@ -8,7 +8,6 @@
 <div id="app">
     <el-button>按钮11</el-button>
 </div>
-
 <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
