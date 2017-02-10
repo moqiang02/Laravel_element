@@ -9,11 +9,11 @@ export default [
         children: [
             {
                 path: '/',
-                redirect: '/dashboard/user/create'
+                redirect: '/dashboard/users'
             },
             {
                 path: 'home',
-                component: require('./views/dashboard/user/User.vue')
+                component: require('./views/dashboard/user/Create.vue')
             },
             {
                 path: 'users',
@@ -25,11 +25,11 @@ export default [
                     },
                     {
                         path: 'create',
-                        component: require('./views/dashboard/user/User.vue')
+                        component: require('./views/dashboard/user/Create.vue')
                     },
                     {
                         path: ':id/edit',
-                        component: require('./views/dashboard/user/User.vue')
+                        component: require('./views/dashboard/user/Create.vue')
                     }
                 ]
             }
