@@ -6,14 +6,14 @@ export default [
         path: '/dashboard',
         component: Dashboard,
         //beforeEnter: requireAuth,
-/*        children: [
+        children: [
             {
                 path: '/',
-                redirect: '/dashboard/home'
+                redirect: '/dashboard/user/create'
             },
             {
                 path: 'home',
-                component: require('./views/dashboard/Home.vue')
+                component: require('./views/dashboard/user/User.vue')
             },
             {
                 path: 'users',
@@ -25,15 +25,15 @@ export default [
                     },
                     {
                         path: 'create',
-                        component: require('./views/dashboard/user/Create.vue')
+                        component: require('./views/dashboard/user/User.vue')
                     },
                     {
                         path: ':id/edit',
-                        component: require('./views/dashboard/user/Edit.vue')
+                        component: require('./views/dashboard/user/User.vue')
                     }
                 ]
             }
-        ]*/
+        ]
     }
 ]
 

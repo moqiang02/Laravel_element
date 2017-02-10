@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
+});*/
+
+
+/* Dashboard Index */
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('{path?}', 'HomeController@dashboard')->where('path', '[\/\w\.-]*');
 });
