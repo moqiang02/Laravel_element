@@ -1,8 +1,9 @@
 <template>
     <div id="top_box">
-        <div id="menu_var">
-            <el-row>
-                <el-col :span="2">
+        <div id="menu_bar">
+            <el-row class="tac">
+                <el-col>
+                    <h5>带 icon</h5>
                     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
                              theme="dark">
                         <el-submenu index="1">
@@ -28,150 +29,36 @@
             <router-view></router-view>
         </div>
         <div id="main_box">
-
+            <div id="nav_bar">11</div>
+            <div id="content_box">11</div>
         </div>
     </div>
 </template>
-
-
 <style lang="sass">
-    $sidebarSize: 250px;
-    $sidebarColor: #828e9a;
-    $sidebarBar: darken($sidebarColor, 3%);
-    /* divider */
-    $sidebarRoll: darken($sidebarColor, 8%);
-
-    body {
-        overflow-x:hidden;
-
-    }
-
-    /* Toggle Styles */
-
-    #wrapper {
-        padding-left: 0;
-        transition:all 0.5 s ease;
-        #wrapper.toggled {
-            padding-left: 250px;
-
-    }
-    }
-
-    #sidebar-wrapper {
-        z-index: 1000;
-        position:fixed;
-        left: 250px;
-        width: 0;
-        height: 100%;
-        margin-left: -250px;
-        overflow-y:auto;
-        background: #4d5e70;
-        transition:all 0.5 s ease;
-
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 250px;
-
-    }
-
-    #page-content-wrapper {
+    #top_box {
         width: 100%;
-        position:absolute;
-
-        .container-fluid {
-            .row {
-                margin: 15px;
-
+        height: 100%;
+        position: fixed;
     }
 
-    }
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position:absolute;
-        margin-right: -250px;
-
+    #menu_bar {
+        background-color: #324157;
+        width: 200px;
+        height: 100%;
+        position: absolute;
     }
 
-    @media(max-width: 768px)
+    #main_box {
+        width: 100%;
+        position: absolute;
+        left: 200px;
 
-    {
-    #page-content-wrapper {
-        padding-left: 0;
-        transition:all 0.5 s ease;
-
-    }
-    #wrapper.toggled #page-content-wrapper {
-        transition:all 0.5 s ease;
-        padding-left: 250px;
-        margin-right: -250px;
-
-    }
+        #nav_bar {
+            width: 100%;
+            height: 60px;
+            background-color: #FFFFFF;
+        }
     }
 
-    @media(min-width
 
-    :
-    768
-
-    px
-
-    )
-    {
-    #wrapper {
-        padding-left: 250px;
-
-    }
-
-    #wrapper.toggled {
-        padding-left: 0;
-
-    }
-
-    #sidebar-wrapper {
-        width: 250px;
-
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-
-    }
-
-    #page-content-wrapper {
-        position:relative;
-
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position:relative;
-        margin-right: 0;
-
-    }
-    }
-
-    .hr {
-        margin-left: 1px;
-        margin-right: 1px;
-        border: 1px solid $sidebarBar;
-
-    }
-
-    .profile {
-        margin: 15px auto;
-        text-align:center;
-        img {
-            height: 125px;
-            border: 3px solid lightgrey;
-            border-radius: 200px;
-
-    }
-    h1 {
-        margin-top: 10px;
-        color:white;
-        font-size: 1.3em;
-
-    }
-    }
 </style>
