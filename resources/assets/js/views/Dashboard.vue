@@ -37,7 +37,7 @@
 </template>
 
 
-<style lang="sass">
+<style lang="sass" scope>
     #top_box {
         width: 100%;
         height: 100%;
@@ -48,7 +48,6 @@
         background-color: #324157;
         width: 200px;
         height: 100%;
-
         float: left;
 
     }
@@ -56,17 +55,23 @@
     #main_box {
         height: 100%;
         margin-left: 200px;
+        overflow: auto;
+
     }
 
     #nav_bar {
         height: 50px;
         background-color: #FFFFFF;
         border-bottom: 1px solid #E6E6E6;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 999 !important;
     }
 
     #content_box {
         width: 90%;
-        margin: 50px auto;
+        margin: 100px auto;
     }
 
 
