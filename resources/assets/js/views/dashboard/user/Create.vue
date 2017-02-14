@@ -84,7 +84,8 @@
         },
         methods: {
             onSubmit() {
-                console.log(this.form.desc.content);
+//                console.log(this.form.desc.content);
+                this.form.desc = this.form.desc.content;
                 this.$http.post('/api/user', this.form)
                     .then((response) => {
                         console.log(response)
