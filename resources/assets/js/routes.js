@@ -9,27 +9,27 @@ export default [
         children: [
             {
                 path: '/',
-                redirect: '/dashboard/users'
+                redirect: '/dashboard/customers'
             },
             {
                 path: 'home',
-                component: require('./views/dashboard/user/Create.vue')
+                component: require('./views/dashboard/customer/Create.vue')
             },
             {
-                path: 'users',
+                path: 'customers',
                 component: Parent,
                 children: [
                     {
                         path: '/',
-                        component: require('./views/dashboard/user/User.vue')
+                        component: require('./views/dashboard/customer/Customer.vue')
                     },
                     {
                         path: 'create',
-                        component: require('./views/dashboard/user/Create.vue')
+                        component: require('./views/dashboard/customer/Create.vue')
                     },
                     {
                         path: ':id/edit',
-                        component: require('./views/dashboard/user/Create.vue')
+                        component: require('./views/dashboard/customer/Create.vue')
                     }
                 ]
             }

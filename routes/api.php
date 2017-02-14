@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
+Route::get('/customer', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
@@ -22,7 +22,7 @@ Route::group([
     'namespace' => 'Api',
 ], function () {
 
-    Route::resource('user', 'UserController');
+    Route::resource('customer', 'UserController');
 
 });
 

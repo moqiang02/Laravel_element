@@ -1327,7 +1327,7 @@ namespace {
         }
         
         /**
-         * Get the user resolver callback.
+         * Get the customer resolver callback.
          *
          * @return \Closure 
          * @static 
@@ -1372,7 +1372,7 @@ namespace {
         }
         
         /**
-         * Create the user provider implementation for the driver.
+         * Create the customer provider implementation for the driver.
          *
          * @param string $provider
          * @return \Illuminate\Contracts\Auth\UserProvider 
@@ -1384,7 +1384,7 @@ namespace {
         }
         
         /**
-         * Get the currently authenticated user.
+         * Get the currently authenticated customer.
          *
          * @return \App\User|null 
          * @static 
@@ -1394,7 +1394,7 @@ namespace {
         }
         
         /**
-         * Get the ID for the currently authenticated user.
+         * Get the ID for the currently authenticated customer.
          *
          * @return int|null 
          * @static 
@@ -1404,7 +1404,7 @@ namespace {
         }
         
         /**
-         * Log a user into the application without sessions or cookies.
+         * Log a customer into the application without sessions or cookies.
          *
          * @param array $credentials
          * @return bool 
@@ -1415,7 +1415,7 @@ namespace {
         }
         
         /**
-         * Validate a user's credentials.
+         * Validate a customer's credentials.
          *
          * @param array $credentials
          * @return bool 
@@ -1450,7 +1450,7 @@ namespace {
         }
         
         /**
-         * Attempt to authenticate a user using the given credentials.
+         * Attempt to authenticate a customer using the given credentials.
          *
          * @param array $credentials
          * @param bool $remember
@@ -1474,7 +1474,7 @@ namespace {
         }
         
         /**
-         * Log a user into the application.
+         * Log a customer into the application.
          *
          * @param \Illuminate\Contracts\Auth\Authenticatable $user
          * @param bool $remember
@@ -1486,7 +1486,7 @@ namespace {
         }
         
         /**
-         * Log the given user ID into the application.
+         * Log the given customer ID into the application.
          *
          * @param mixed $id
          * @param bool $remember
@@ -1498,7 +1498,7 @@ namespace {
         }
         
         /**
-         * Log the given user ID into the application without sessions or cookies.
+         * Log the given customer ID into the application without sessions or cookies.
          *
          * @param mixed $id
          * @return \App\User|false 
@@ -1509,7 +1509,7 @@ namespace {
         }
         
         /**
-         * Log the user out of the application.
+         * Log the customer out of the application.
          *
          * @return void 
          * @static 
@@ -1572,7 +1572,7 @@ namespace {
         }
         
         /**
-         * Get the user provider used by the guard.
+         * Get the customer provider used by the guard.
          *
          * @return \Illuminate\Contracts\Auth\UserProvider 
          * @static 
@@ -1582,7 +1582,7 @@ namespace {
         }
         
         /**
-         * Set the user provider used by the guard.
+         * Set the customer provider used by the guard.
          *
          * @param \Illuminate\Contracts\Auth\UserProvider $provider
          * @return void 
@@ -1593,7 +1593,7 @@ namespace {
         }
         
         /**
-         * Return the currently cached user.
+         * Return the currently cached customer.
          *
          * @return \App\User|null 
          * @static 
@@ -1603,7 +1603,7 @@ namespace {
         }
         
         /**
-         * Set the current user.
+         * Set the current customer.
          *
          * @param \Illuminate\Contracts\Auth\Authenticatable $user
          * @return $this 
@@ -1635,7 +1635,7 @@ namespace {
         }
         
         /**
-         * Get the last user we attempted to authenticate.
+         * Get the last customer we attempted to authenticate.
          *
          * @return \App\User 
          * @static 
@@ -1665,7 +1665,7 @@ namespace {
         }
         
         /**
-         * Determine if the user was authenticated via "remember me" cookie.
+         * Determine if the customer was authenticated via "remember me" cookie.
          *
          * @return bool 
          * @static 
@@ -1675,7 +1675,7 @@ namespace {
         }
         
         /**
-         * Determine if the current user is authenticated.
+         * Determine if the current customer is authenticated.
          *
          * @return \App\User 
          * @throws \Illuminate\Auth\AuthenticationException
@@ -1686,7 +1686,7 @@ namespace {
         }
         
         /**
-         * Determine if the current user is authenticated.
+         * Determine if the current customer is authenticated.
          *
          * @return bool 
          * @static 
@@ -1696,7 +1696,7 @@ namespace {
         }
         
         /**
-         * Determine if the current user is a guest.
+         * Determine if the current customer is a guest.
          *
          * @return bool 
          * @static 
@@ -5887,7 +5887,7 @@ namespace {
         }
         
         /**
-         * Determine if the given ability should be granted for the current user.
+         * Determine if the given ability should be granted for the current customer.
          *
          * @param string $ability
          * @param array|mixed $arguments
@@ -5899,7 +5899,7 @@ namespace {
         }
         
         /**
-         * Determine if the given ability should be denied for the current user.
+         * Determine if the given ability should be denied for the current customer.
          *
          * @param string $ability
          * @param array|mixed $arguments
@@ -5911,7 +5911,7 @@ namespace {
         }
         
         /**
-         * Determine if the given ability should be granted for the current user.
+         * Determine if the given ability should be granted for the current customer.
          *
          * @param string $ability
          * @param array|mixed $arguments
@@ -5923,7 +5923,7 @@ namespace {
         }
         
         /**
-         * Determine if the given ability should be granted for the current user.
+         * Determine if the given ability should be granted for the current customer.
          *
          * @param string $ability
          * @param array|mixed $arguments
@@ -5959,7 +5959,7 @@ namespace {
         }
         
         /**
-         * Get a gate instance for the given user.
+         * Get a gate instance for the given customer.
          *
          * @param \Illuminate\Contracts\Auth\Authenticatable|mixed $user
          * @return static 
@@ -7890,7 +7890,7 @@ namespace {
         }
         
         /**
-         * Get the user making the request.
+         * Get the customer making the request.
          *
          * @param string|null $guard
          * @return mixed 
@@ -7923,7 +7923,7 @@ namespace {
         }
         
         /**
-         * Get the user resolver callback.
+         * Get the customer resolver callback.
          *
          * @return \Closure 
          * @static 
@@ -7933,7 +7933,7 @@ namespace {
         }
         
         /**
-         * Set the user resolver callback.
+         * Set the customer resolver callback.
          *
          * @param \Closure $callback
          * @return $this 
@@ -8430,7 +8430,7 @@ namespace {
         }
         
         /**
-         * Returns the user.
+         * Returns the customer.
          *
          * @return string|null 
          * @static 
@@ -8452,9 +8452,9 @@ namespace {
         }
         
         /**
-         * Gets the user info.
+         * Gets the customer info.
          *
-         * @return string A user name and, optionally, scheme-specific information about how to gain authorization to access the server
+         * @return string A customer name and, optionally, scheme-specific information about how to gain authorization to access the server
          * @static 
          */
         public static function getUserInfo(){
@@ -8489,7 +8489,7 @@ namespace {
         /**
          * Gets the scheme and HTTP host.
          * 
-         * If the URL was called with basic authentication, the user
+         * If the URL was called with basic authentication, the customer
          * and the password are not added to the generated string.
          *
          * @return string The scheme and HTTP host
@@ -8698,7 +8698,7 @@ namespace {
          * 
          * Here is the process to determine the format:
          * 
-         *  * format defined by the user (with setRequestFormat())
+         *  * format defined by the customer (with setRequestFormat())
          *  * _format request attribute
          *  * $default
          *
@@ -8850,7 +8850,7 @@ namespace {
         /**
          * Gets a list of languages acceptable by the client browser.
          *
-         * @return array Languages ordered in the user browser preferences
+         * @return array Languages ordered in the customer browser preferences
          * @static 
          */
         public static function getLanguages(){
