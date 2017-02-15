@@ -16,9 +16,11 @@ class CustomerTransformer extends TransformerAbstract
     public function transform(Customer $customer)
     {
         return [
-            'id'                => $customer->id,
-            'name'             => $customer->name,
-            'address'          => $customer->address,
+            'id' => $customer->id,
+            'name' => $customer->name,
+            'address' => $customer->address,
+            'date_at' => $customer->created_at->diffForHumans(),
+            'date' => $customer->created_at->toDateTimeString(),
         ];
     }
 }

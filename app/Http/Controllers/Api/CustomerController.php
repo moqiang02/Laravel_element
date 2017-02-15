@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App\Repositories\CustomerRepository;
+use App\Transformers\CustomerTransformer;
 
 class UserController extends ApiController
 {
@@ -22,7 +24,7 @@ class UserController extends ApiController
      */
     public function index()
     {
-        return $this->respondWithPaginator($this->article->page(), new ArticleTransformer);
+        return $this->respondWithPaginator($this->customer->page(), new CustomerTransformer);
     }
 
     public function store(Request $request)

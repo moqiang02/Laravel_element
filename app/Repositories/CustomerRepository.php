@@ -1,13 +1,20 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Rex
- * Date: 2017/2/14
- * Time: 19:35
- */
+namespace App\Repositories;
+
+
+use App\Customer;
+
 class CustomerRepository
 {
     use BaseRepository;
 
+    protected $model;
+
+
+    public function __construct(Customer $customer)
+    {
+        $this->model = $customer;
+
+    }
 }
