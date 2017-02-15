@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Api;
 
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UserController extends ApiController
 {
 
-//    public function __construct()
-//    {
-//        parent::__construct();
-//    }
+    protected $customer;
+
+    public function __construct(CustomerRepository $customerRepository)
+    {
+        parent::__construct();
+        $this->customer = $customerRepository;
+    }
 
     /**
      * Display a listing of the resource.
@@ -21,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        return $this->respondWithPaginator($this->article->page(), new ArticleTransformer);
     }
 
     public function store(Request $request)
