@@ -29,7 +29,7 @@ export default [
                     },
                     {
                         path: ':id/edit',
-                        component: require('./views/dashboard/customer/Create.vue')
+                        component: require('./views/dashboard/customer/Edit.vue')
                     }
                 ]
             }

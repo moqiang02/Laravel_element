@@ -49,7 +49,7 @@
                 <el-pagination
                         layout="prev, pager, next"
                         @current-change="handleCurrentChange"
-                        :total="50">
+                        :total=total>
                 </el-pagination>
             </div>
         </el-card>
@@ -82,7 +82,8 @@
                  name: '王小虎',
                  address: '上海市普陀区金沙江路 1516 弄'
                  }]*/
-                tableData: []
+                tableData: [],
+                total: 0,
             }
         },
         created() {
@@ -90,19 +91,23 @@
                 .then((response) => {
 //                    console.log(response)
                     this.tableData = response.data.data;
+                    this.total = response.data.meta.pagination.total;
                 })
         },
         methods: {
             handleEdit(index, row) {
                 console.log(index, row);
-                this.tableData[index].name = "zz";
+                this.$router.push('/dashboard/customers/' + index + '/edit')
             },
             handleDelete(index, row) {
                 this.tableData.splice(index, 1);
             },
             handleCurrentChange(val) {
                 this.currentPage = val;
-                console.log(`当前页: ${val}`);
+                this.$http.get('/api/customer?page='+val)
+                    .then((response) => {
+                        this.tableData = response.data.data;
+                    })
             }
         }
     }

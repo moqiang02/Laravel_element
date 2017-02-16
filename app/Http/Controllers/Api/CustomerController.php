@@ -33,4 +33,18 @@ class UserController extends ApiController
         return $this->noContent();
     }
 
+    public function edit($id)
+    {
+        return $this->respondWithItem($this->customer->getById($id), new CustomerTransformer());
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = $request->all();
+
+        $this->customer->update($id, $data);
+
+        return $this->noContent();
+    }
+
 }
