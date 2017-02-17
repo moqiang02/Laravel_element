@@ -9,6 +9,22 @@
                     <el-form-item label="活动名称">
                         <el-input v-model="form.name"></el-input>
                     </el-form-item>
+                    <el-form-item label="上传图片">
+                        <el-upload
+                                action="/api/upload/upimg"
+                                type="drag"
+                                name="customer_img"
+                                :thumbnail-mode="true"
+                                :on-preview="handlePreview"
+                                :on-remove="handleRemove"
+                                :on-success="handleSucc"
+                                :default-file-list="fileList"
+                        >
+                            <i class="el-icon-upload"></i>
+                            <div class="el-dragger__text">将文件拖到此处，或<em>点击上传</em></div>
+                            <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+                        </el-upload>
+                    </el-form-item>
                     <el-form-item label="活动区域">
                         <el-select v-model="form.region" placeholder="请选择活动区域">
                             <el-option label="区域一" value="shanghai"></el-option>
@@ -47,20 +63,6 @@
                         <!--<el-input type="textarea" v-model="form.desc"></el-input>-->
                         <ueditor v-bind:value=defaultMsg v-bind:config=config v-model="form.desc"></ueditor>
                     </el-form-item>
-                    <el-form-item label="上传图片">
-                        <el-upload
-                                action="/public/images/"
-                                type="drag"
-                                :thumbnail-mode="true"
-                                :on-preview="handlePreview"
-                                :on-remove="handleRemove"
-                                :default-file-list="fileList"
-                        >
-                            <i class="el-icon-upload"></i>
-                            <div class="el-dragger__text">将文件拖到此处，或<em>点击上传</em></div>
-                            <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
-                        </el-upload>
-                    </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="onSubmit">立即创建</el-button>
                         <el-button>取消</el-button>
@@ -95,8 +97,7 @@
                     desc: ''
                 },
                 fileList: [
-                    {name: 'food.jpeg', url: '/images/5.jpg'},
-                    {name: 'food2.jpeg', url: '/images/6.jpg'}
+                    {name: 'food.jpeg', url: '/images/5.jpg'}
                 ]
             }
         },
@@ -120,7 +121,16 @@
             },
             handlePreview(file) {
                 console.log(file);
-            }
+            },
+            handleSucc(response, file, fileList){
+                console.log(response,file,fileList);
+            },
         }
     }
 </script>
+
+<style scope>
+    .el-upload__input {
+        display: none !important;
+    }
+</style>

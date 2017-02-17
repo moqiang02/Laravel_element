@@ -24,5 +24,6 @@ Route::group([
 
     Route::resource('customer', 'UserController');
 
+    Route::post('upload/upimg', 'UploadController@upimg');
 });
 
