@@ -43,9 +43,23 @@
                             <el-radio label="线下场地免费"></el-radio>
                         </el-radio-group>
                     </el-form-item>
-                    <el-form-item label="活动形式">
+                    <el-form-item label="活动">
                         <!--<el-input type="textarea" v-model="form.desc"></el-input>-->
                         <ueditor v-bind:value=defaultMsg v-bind:config=config v-model="form.desc"></ueditor>
+                    </el-form-item>
+                    <el-form-item label="上传图片">
+                        <el-upload
+                                action="/public/images/"
+                                type="drag"
+                                :thumbnail-mode="true"
+                                :on-preview="handlePreview"
+                                :on-remove="handleRemove"
+                                :default-file-list="fileList"
+                        >
+                            <i class="el-icon-upload"></i>
+                            <div class="el-dragger__text">将文件拖到此处，或<em>点击上传</em></div>
+                            <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+                        </el-upload>
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="onSubmit">立即创建</el-button>
@@ -79,12 +93,17 @@
                     type: [],
                     resource: '',
                     desc: ''
-                }
+                },
+                fileList: [
+                    {name: 'food.jpeg', url: '/images/5.jpg'},
+                    {name: 'food2.jpeg', url: '/images/6.jpg'}
+                ]
             }
         },
         methods: {
             onSubmit() {
-//                console.log(this.form.desc.content);
+                console.log(this.form.desc.content);
+                console.log(this.fileList);
                 this.form.desc = this.form.desc.content;
                 this.$http.post('/api/customer', this.form)
                     .then((response) => {
@@ -95,6 +114,12 @@
                         alert(1);
                         console.log(response)
                     });
+            },
+            handleRemove(file, fileList) {
+                console.log(file, fileList);
+            },
+            handlePreview(file) {
+                console.log(file);
             }
         }
     }
